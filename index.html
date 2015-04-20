@@ -1,0 +1,26 @@
+<html ng-app="todoApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo with AngularJS</title>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="src/application.js"></script>
+</head>
+<body>
+    <div ng-controller="TodoList">
+      
+      <h1>Todo List</h1>
+      
+      <input type="text" ng-model="inputText" placeholder="input your plan"> 
+      <input ng-click="addTodo()" type="button" value="Add"/>
+      <input ng-click="clearTodo()" type="button" value="Clear"/>
+
+      
+      <ul ng-repeat="item in lists">
+        <li> 
+          <input type="checkbox" ng-model="item.check"/> {{item.name}}
+        </li>
+      </ul>
+
+    </div>
+</body>
+</html>
